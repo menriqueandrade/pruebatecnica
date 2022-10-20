@@ -36,11 +36,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 child: Center(
                   child: FractionallySizedBox(
                     widthFactor: .6,
-                    child: Image.network(
-                        'https://static.wixstatic.com/media/98f07d_c433417234e34410a610f561b2f7a511~mv2.png/v1/fill/w_337,h_336,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/AntPack_Logo_White_Transparent.png',
-                        fit: BoxFit.fill,
-                        width: 200,
-                        height: 300),
+                    child: Image.asset('assets/logo.png')
                   ),
                 ),
               ),
@@ -70,10 +66,16 @@ class _backgroundImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        child: Image.network(
-            'https://static6.depositphotos.com/1037473/614/i/600/depositphotos_6149148-stock-photo-plain-pink-background.jpg',
-            fit: BoxFit.cover,
-            width: double.infinity,
-            height: double.infinity));
+         child: Image.asset('assets/fondo.jpg',
+         fit: BoxFit.cover,
+         width: double.infinity,
+         height: double.infinity
+         ));
+
+         // Image.network(
+        //     'https://static6.depositphotos.com/1037473/614/i/600/depositphotos_6149148-stock-photo-plain-pink-background.jpg',
+        //     fit: BoxFit.cover,
+        //     width: double.infinity,
+        //     height: double.infinity));
   }
 }

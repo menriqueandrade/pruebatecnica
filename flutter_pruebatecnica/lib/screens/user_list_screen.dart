@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_pruebatecnica/models/usuarios.dart';
+import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 
 import '../api/peticionapi.dart';
@@ -62,11 +63,7 @@ class UserList extends StatefulWidget {
 class _UserListState extends State<UserList> {
   final ScrollController _scrollController = ScrollController();
   late final List<Users> usuarios;
-  // late ScrollController _scrollController;
-  // final int _tamanoMaximo = 15;
-  // int page = 1;
-  // bool isLoading = false;
-  // bool hasMore = true;
+
   bool loading = false, allLoaded = false;
   mockFetch() async {
     if (allLoaded) {
@@ -98,6 +95,12 @@ class _UserListState extends State<UserList> {
     _scrollController.addListener(() {
       if (_scrollController.position.pixels >=
           _scrollController.position.maxScrollExtent) {
+          Get.snackbar(
+          "No hay mas usuarios",
+          'llegaste muy abajo :D',
+          icon: Icon(Icons.error, color: Colors.red),
+          snackPosition: SnackPosition.BOTTOM,
+        );
         print("Nueva informacion");
         mockFetch();
       }
@@ -128,8 +131,7 @@ class _UserListState extends State<UserList> {
                     Container(
                       height: 100,
                       width: 100,
-                      child: Image.network(
-                          'https://www.coordinadora.com/wp-content/uploads/sidebar_usuario-corporativo.png'),
+                      child: Image.asset('assets/user.png'),
                     ),
                     Text(
                       widget.usuarios[index].name,

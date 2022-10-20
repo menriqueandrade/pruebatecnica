@@ -7,12 +7,10 @@ import 'user_offline_screen.dart';
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Material App',
       home: Scaffold(
-        
         extendBodyBehindAppBar: true,
         appBar: AppBar(
           title: CircleAvatar(
@@ -35,53 +33,11 @@ class HomeScreen extends StatelessWidget {
                   height: 30,
                 ),
                 _JSONFILE(),
-                // SizedBox(
-                //   height: 30,
-                // ),
-                // GestionDePagos(),
-                // SizedBox(
-                //   height: 30,
-                // ),
-                // ChatHorizontal(),
+
               ],
             ),
           ),
         )),
-
-        // Container(
-        //   width: 280,
-        //   height: 280,
-        //   decoration: BoxDecoration(
-        //       borderRadius: BorderRadius.circular(50),
-        //       color: Colors.lightBlueAccent,
-        //       image: DecorationImage(
-        //           image: NetworkImage(
-        //               'https://www.codigocorrecto.com/wp-content/uploads/2020/11/HTTP-API-1024x536.jpg'),
-        //           fit: BoxFit.fill)),
-        //   child: Container(
-        //     decoration: BoxDecoration(
-        //         gradient:
-        //             LinearGradient(begin: Alignment.bottomRight, colors: [
-        //       Colors.white.withOpacity(.2),
-        //       Colors.white12.withOpacity(.1),
-        //     ])),
-        //     child: Column(
-        //       mainAxisAlignment: MainAxisAlignment.center,
-        //       children: <Widget>[
-        //         Text(
-        //           "Junta Administrativa",
-        //           style: TextStyle(
-        //               color: Color.fromARGB(255, 0, 0, 0),
-        //               fontSize: 25,
-        //               fontWeight: FontWeight.bold),
-        //         ),
-        //         SizedBox(
-        //           height: 210,
-        //         ),
-        //       ],
-        //     ),
-        //   ),
-        // ),
       ),
     );
   }
@@ -96,17 +52,17 @@ class _API extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-          Get.to(() => Lista(),  transition: Transition.zoom);
+        Get.to(() => Lista(), transition: Transition.zoom);
       },
       child: Container(
         width: double.infinity,
-        height: 250,
+        height: 215,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(50),
-            color: Colors.lightBlueAccent,
+            color: Color.fromARGB(218, 204, 12, 12),
             image: DecorationImage(
-                image: NetworkImage(
-                    'https://www.elemental.co.za/cms/resources/uploads/blog/86/926f6aaba773.png'),
+                image: 
+                AssetImage('assets/api.png'),
                 fit: BoxFit.fill)),
         child: Container(
           decoration: BoxDecoration(
@@ -117,7 +73,6 @@ class _API extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-             
               SizedBox(
                 height: 210,
               ),
@@ -138,17 +93,22 @@ class _JSONFILE extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-          Get.to(() => Offline(),  transition: Transition.zoom);
+        Get.to(() => Offline(), transition: Transition.zoom);
+         Get.snackbar(
+          "No Tienes internet",
+          'Aun asi aca estan los datos ',
+          icon: Icon(Icons.wifi, color: Colors.red),
+          snackPosition: SnackPosition.BOTTOM,
+        );
       },
       child: Container(
         width: double.infinity,
-        height: 250,
+        height: 215,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(50),
-            color: Colors.lightBlueAccent,
+            color: Color.fromARGB(218, 204, 12, 12),
             image: DecorationImage(
-                image: NetworkImage(
-                    'https://cdn-icons-png.flaticon.com/512/136/136443.png'),
+                image:  AssetImage('assets/json.png'),
                 fit: BoxFit.fill)),
         child: Container(
           decoration: BoxDecoration(
@@ -159,7 +119,6 @@ class _JSONFILE extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-             
               SizedBox(
                 height: 210,
               ),
@@ -170,18 +129,4 @@ class _JSONFILE extends StatelessWidget {
     );
   }
 }
-class _backgroundImage extends StatelessWidget {
-  const _backgroundImage({
-    Key? key,
-  }) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-        child: Image.network(
-            'https://static6.depositphotos.com/1037473/614/i/600/depositphotos_6149148-stock-photo-plain-pink-background.jpg',
-            fit: BoxFit.cover,
-            width: double.infinity,
-            height: double.infinity));
-  }
-}
