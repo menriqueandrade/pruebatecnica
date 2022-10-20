@@ -21,12 +21,15 @@ class _OfflineState extends State<Offline> {
       title: 'Material App',
       home: Scaffold(
         extendBodyBehindAppBar: true,
-      appBar: AppBar(
-        title: Text("Lista de Usuarios JSON File" ,style: TextStyle(color: Colors.black),),
-        centerTitle: true,
-        backgroundColor: Color.fromARGB(0, 134, 37, 137),
-        elevation: 5,
-      ),
+        appBar: AppBar(
+          title: Text(
+            "Lista de Usuarios JSON File",
+            style: TextStyle(color: Colors.black),
+          ),
+          centerTitle: true,
+          backgroundColor: Color.fromARGB(0, 134, 37, 137),
+          elevation: 5,
+        ),
         body: FutureBuilder(
             future: MostrarUserOffline(),
             builder: ((context, data) {
@@ -41,7 +44,6 @@ class _OfflineState extends State<Offline> {
                         height: 200,
                         width: 200,
                         child: Card(
-                        
                           shadowColor: Color.fromARGB(255, 255, 64, 217),
                           elevation: 10,
                           child: Column(
@@ -76,40 +78,6 @@ class _OfflineState extends State<Offline> {
                           ),
                         ),
                       );
-                      // Card(
-                      //   elevation: 5,
-                      //   child: Column(
-                      //     children: [
-                      //       Card(
-                      //         elevation: 5,
-                      //         child: Column(
-                      //           children: [
-                      //             Container(
-                      //                 height: 100,
-                      //                 width: 100,
-                      //                 child: CircleAvatar()),
-                      //             Text(
-                      //               items[index].name,
-                      //               style: TextStyle(
-                      //                   fontSize: 25,
-                      //                   color: Color.fromARGB(255, 0, 0, 0)),
-                      //             ),
-                      //             Text('Correo: ' + items[index].email,
-                      //                 style: TextStyle(
-                      //                     fontSize: 15,
-                      //                     color: Color.fromARGB(255, 0, 0, 0))),
-                      //             Text(
-                      //               'Ciudad: ' + items[index].address.city,
-                      //             ),
-                      //             Text(
-                      //               'Compañia: ' + items[index].company.name,
-                      //             ),
-                      //           ],
-                      //         ),
-                      //       ),
-                      //     ],
-                      //   ),
-                      // );
                     });
               } else {
                 return Center(
@@ -121,4 +89,3 @@ class _OfflineState extends State<Offline> {
     );
   }
 }
-

@@ -72,10 +72,6 @@ class _backgroundImage extends StatelessWidget {
          height: double.infinity
          ));
 
-         // Image.network(
-        //     'https://static6.depositphotos.com/1037473/614/i/600/depositphotos_6149148-stock-photo-plain-pink-background.jpg',
-        //     fit: BoxFit.cover,
-        //     width: double.infinity,
-        //     height: double.infinity));
+        
   }
 }
